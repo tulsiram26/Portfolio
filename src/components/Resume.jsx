@@ -55,13 +55,13 @@ const Resume = () => {
       </div>
 
       {/* Right Div */}
-      <div className="w-2/3 bg-gray-900 p-8">
+      <div className="w-2/3 bg-gray-900 p-8 rounded-lg">
         {/* Title */}
-        <div className="bg-red-500 text-white text-center py-4 rounded mb-6">
+        <div className="bg-red-500  text-white text-center py-4 rounded mb-6">
           <h2 className="text-2xl font-bold">Resume</h2>
         </div>
         {/* Content */}
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 gap-8 ">
           {/* Left Column */}
           <div>
             {/* Profile */}

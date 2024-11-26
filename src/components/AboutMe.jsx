@@ -1,8 +1,15 @@
 import React from "react";
 import { FaHtml5, FaCss3Alt, FaReact, FaGitAlt } from "react-icons/fa";
 import { SiJavascript, SiTailwindcss } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
 
 function AboutMe() {
+  const navigate = useNavigate(); // Initialize the navigate function
+
+  const handleDownloadClick = () => {
+    navigate("/resume");
+  }; // Navigate to the /resume page when clicked
+
   return (
     <div className="py-12 bg-gray-900 text-white flex flex-col md:flex-row items-center justify-center gap-10 p-12">
       {/* Left Section */}
@@ -68,12 +75,7 @@ function AboutMe() {
         <div>
           <button
             className="px-6 py-3 bg-[#ff5733] text-white rounded hover:bg-[#e64e1b]"
-            onClick={() => {
-              window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: "smooth",
-              });
-            }}
+            onClick={handleDownloadClick} // Call the navigate function on click
           >
             Download Resume
           </button>

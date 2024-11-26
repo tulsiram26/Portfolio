@@ -9,3 +9,23 @@ html, body {
     overflow-x: hidden;
   }
   
+/* Style for the image hover motion effect */
+.image-hover-motion {
+  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.image-hover-motion:hover {
+  transform: scale(1.05) translateX(10px) translateY(-5px) rotateY(10deg); /* Moves, scales, and rotates */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Adds a shadow to enhance the pop effect */
+}
+.animated-name {
+  display: inline-block; /* To control each letter's animation */
+  overflow: hidden; /* Prevent letters from showing before animation starts */
+  white-space: nowrap; /* Keep the text on one line */
+  animation: typing 3s steps(14, end), blink 0.5s step-end infinite alternate;
+  border-right: 2px solid #00bfff; /* Optional blinking cursor effect */
+}
+
+
+/* <div className="min-h-screen w-full bg-gradient-to-r from-black via-red-800 to-black"> */
+

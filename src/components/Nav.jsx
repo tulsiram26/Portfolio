@@ -18,14 +18,16 @@ function Nav() {
                 Home
               </Link>
             </li>
-            <li>
-              <Link to="/resume" className="hover:text-gray-400 hover:italic">
-                Resume
-              </Link>
-            </li>
+
             <li>
               <Link to="/about" className="hover:text-gray-400 hover:italic">
                 About Me
+              </Link>
+            </li>
+            
+            <li>
+              <Link to="/project" className="hover:text-gray-400 hover:italic">
+                Project
               </Link>
             </li>
             <li>
@@ -60,15 +62,6 @@ function Nav() {
             </li>
             <li>
               <Link
-                to="/resume"
-                onClick={() => setIsMenuOpen(false)}
-                className="hover:text-gray-400"
-              >
-                Resume
-              </Link>
-            </li>
-            <li>
-              <Link
                 to="/about"
                 onClick={() => setIsMenuOpen(false)}
                 className="hover:text-gray-400"
@@ -76,6 +69,16 @@ function Nav() {
                 About Me
               </Link>
             </li>
+            <li>
+              <Link
+                to="/resume"
+                onClick={() => setIsMenuOpen(false)}
+                className="hover:text-gray-400"
+              >
+                Resume
+              </Link>
+            </li>
+
             <li>
               <Link
                 to="/contact"
