@@ -67,7 +67,7 @@ function Home() {
             I’m always excited to learn about new technology and how it can
             improve the way we use the internet. Every day brings new
             opportunities to build something better, and I’m passionate about
-            being part of that."
+            being part of that. "
           </p>
           <button
             className="px-6 py-3 bg-[#00BFFF] text-white rounded hover:bg-[#DC143C]"
