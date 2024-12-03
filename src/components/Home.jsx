@@ -147,7 +147,6 @@ function Home() {
       </div>
       {/* Other Components */}
       <AboutMe />
-      <Resume />
       <Project />
       <Contact />
     </div>

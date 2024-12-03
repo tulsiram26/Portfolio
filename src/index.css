@@ -8,6 +8,39 @@ html, body {
     min-height: 100%;
     overflow-x: hidden;
   }
+
+  body {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #353a324c;
+  }
+  
+
+/* Apply globally to all scrollbars */
+::-webkit-scrollbar {
+  width: 8px; 
+  height: 8px; 
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 10px; 
+}
+
+/* Thumb (the draggable handle) */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px; 
+}
+
+/* Thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+
   
 /* Style for the image hover motion effect */
 .image-hover-motion {
@@ -15,15 +48,26 @@ html, body {
 }
 
 .image-hover-motion:hover {
-  transform: scale(1.05) translateX(10px) translateY(-5px) rotateY(10deg); /* Moves, scales, and rotates */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Adds a shadow to enhance the pop effect */
+  transform: scale(1.05) translateX(10px) translateY(-5px) rotateY(10deg); 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
 }
 .animated-name {
-  display: inline-block; /* To control each letter's animation */
-  overflow: hidden; /* Prevent letters from showing before animation starts */
-  white-space: nowrap; /* Keep the text on one line */
+  display: inline-block; 
+  overflow: hidden; 
+  white-space: nowrap; 
   animation: typing 3s steps(14, end), blink 0.5s step-end infinite alternate;
-  border-right: 2px solid #00bfff; /* Optional blinking cursor effect */
+  border-right: 2px solid #00bfff; 
+}
+
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Keeps the video behind the content */
 }
 
 
