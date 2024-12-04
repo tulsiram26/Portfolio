@@ -1,113 +1,87 @@
-import React, { useState } from "react";
-import emailjs from "emailjs-com";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [sending, setSending] = useState(false);
-  const [success, setSuccess] = useState(false);
+const Contactform = () => {
+  const form = useRef();
 
-  // Handle input changes
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  // Handle form submission
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    setSending(true);
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS Service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS Template ID
-        e.target, // Form element
-        "YOUR_USER_ID" // Replace with your EmailJS User ID
+        "service_gqmpraq", // Replace with your EmailJS Service ID
+        "template_i1ws2wj", // Replace with your EmailJS Template ID
+        form.current,
+        "cPvGHjn3J4mrJ98fL" // Replace with your EmailJS Public Key
       )
       .then(
         (result) => {
           console.log("Email sent successfully:", result.text);
-          setSending(false);
-          setSuccess(true);
+          alert("Message Sent Successfully!");
+          form.current.reset();
         },
         (error) => {
-          console.error("Email sending failed:", error.text);
-          setSending(false);
-          setSuccess(false);
+          console.error("Error sending email:", error.text);
+          alert("Failed to send message. Please try again.");
         }
       );
   };
 
   return (
-    <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-6">
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-            Name
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Enter your name"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-            Email
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="Enter your email"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Write your message here"
-            rows="4"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
-            value={formData.message}
-            onChange={handleInputChange}
-            required
-          ></textarea>
-        </div>
-        <div className="text-center">
-          <button
-            type="submit"
-            className={`px-6 py-2 ${
-              sending ? "bg-gray-400" : "bg-indigo-500"
-            } text-white rounded-md hover:bg-indigo-600 focus:outline-none focus:ring focus:ring-indigo-200`}
-            disabled={sending}
-          >
-            {sending ? "Sending..." : "Send Message"}
-          </button>
-        </div>
-      </form>
+    <form
+      className="flex opacity-60 flex-col max-w-screen-sm mx-auto"
+      ref={form}
+      onSubmit={sendEmail}
+    >
+      {/* Name Field */}
+      <label htmlFor="user_name" className="text-white mb-2">
+        Name:
+      </label>
+      <input
+        id="user_name"
+        name="user_name"
+        type="text"
+        className="text-black px-3 py-2 rounded-3xl outline-none mb-4"
+        placeholder="Enter your name"
+        required
+      />
 
-      {/* Success or Error Message */}
-      {success && <p className="text-green-500 text-center mt-4">Message sent successfully!</p>}
-      {!success && !sending && <p className="text-red-500 text-center mt-4">Something went wrong. Please try again.</p>}
-    </div>
+      {/* Email Field */}
+      <label htmlFor="user_email" className="text-white mb-2">
+        Email:
+      </label>
+      <input
+        id="user_email"
+        name="user_email"
+        type="email"
+        className="text-black px-3 py-2 rounded-3xl outline-none mb-4"
+        placeholder="Enter your email"
+        required
+      />
+
+      {/* Message Field */}
+      <label htmlFor="message" className="text-white mb-2">
+        Message:
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        className="text-black px-3 py-2 w-full h-[32vh] rounded-xl outline-none mb-4"
+        placeholder="Enter your message"
+        required
+      />
+
+      {/* Submit Button */}
+      <div className="flex justify-center  items-center mt-8">
+        <button
+          type="submit"
+          className="px-6 py-2  bg-blue-700 rounded-xl text-white font-semibold text-lg"
+        >
+          Send Message
+        </button>
+      </div>
+    </form>
   );
 };
 
-export default ContactForm;
+export default Contactform;
