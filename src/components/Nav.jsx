@@ -8,31 +8,39 @@ function Nav() {
     <nav className="bg-black text-white p-10">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-2xl">Portfolio</h1>
+        <h1 className="text-2xl font-bold">Portfolio</h1>
 
         {/* Desktop Menu */}
         <div>
           <ul className="hidden md:flex gap-6 pr-20 font-semibold text-lg">
             <li>
               <Link to="/" className="hover:text-gray-400 hover:italic">
-                Home
+                <span className="border-2 border-zinc-500 rounded-lg px-4 py-2 transition-transform hover:scale-105">
+                  Home
+                </span>
               </Link>
             </li>
 
             <li>
               <Link to="/about" className="hover:text-gray-400 hover:italic">
-                About Me
+                <span className="border-2 border-zinc-500 rounded-lg px-4 py-2 transition-transform hover:scale-105">
+                  About Me
+                </span>
               </Link>
             </li>
-            
+
             <li>
               <Link to="/project" className="hover:text-gray-400 hover:italic">
-                Project
+                <span className="border-2 border-zinc-500 rounded-lg px-4 py-2 transition-transform hover:scale-105">
+                  Project
+                </span>
               </Link>
             </li>
             <li>
               <Link to="/contact" className="hover:text-gray-400 hover:italic">
-                Contact
+                <span className="border-2 border-zinc-500 rounded-lg px-4 py-2 transition-transform hover:scale-105">
+                  Contact
+                </span>
               </Link>
             </li>
           </ul>
