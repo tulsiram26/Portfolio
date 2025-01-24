@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import Resume from "./components/Resume";
 import Contact from "./components/Contact";
 import Project from "./components/Project";
-import AboutMe from "./components/Aboutme";
+import AboutMe from "./components/AboutMe";
 import ProjectDetails from "./components/ProjectDetails";
 import StreamSphere from "./components/Projects/StreamSphere";
 import Chatbot from "./components/Projects/Chatbot";
