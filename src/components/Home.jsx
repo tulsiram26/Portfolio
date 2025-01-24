@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Resume from "./Resume";
 import Project from "./Project";
 import Contact from "./Contact";
-import AboutMe from "./Aboutme";
+import AboutMe from "./AboutMe";
 
 function Home() {
   const [showHandles, setShowHandles] = useState(false);
